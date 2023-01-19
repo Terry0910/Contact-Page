@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre&family=Kalam&family=Major+Mono+Display&display=swap');
+
+body {
+    box-sizing: 0;
+    padding: 0;
+    margin: 0;
+  width:100%;
+}
+
+
+form {
+  margin: 2em 0;
+}
+/**
+* Make the field a flex-container, reverse the order so label is on top.
+*/
+
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+/**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the 
+* pesky delay.
+*/
+label,
+input,
+textarea {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input,
+textarea {
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+label {
+  /* text-transform: uppercase; */
+  letter-spacing: 0.05em;
+}
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+input:placeholder-shown + label,
+textarea:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+/**
+* By default, the placeholder should be transparent. Also, it should 
+* inherit the transition.
+*/
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+/**
+* Show the placeholder when the input is focused.
+*/
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+/**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+textarea:not(:placeholder-shown) + label,
+textarea:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+.container-fluid {
+    background-color: #334756;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  /* font-size: 10px; */
+
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+.box {
+    /* font-family: 'Kalam', cursive; */
+    font-family: 'David Libre', serif;
+  color: azure;
+  /* border: 10px solid yellow; */
+  border-radius: 5px;
+  width: 40%;
+  padding: 12px;
+    margin-top: 100px;
+  background-color: #333;
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+
+
+
+
+/* CSS */
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
